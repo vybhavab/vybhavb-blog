@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import classnames from 'classnames';
 
-
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
@@ -33,11 +32,6 @@ class Navbar extends React.Component {
               <span className="is-size-4 is-size-5-mobile">vb.blog</span>
             </a>
           </Link>
-          {/* <div className={classnames('navbar-burger', 'burger', { 'is-active': active })} role="navigation" onClick={this.toggleMenu}>
-            <span />
-            <span />
-            <span />
-          </div> */}
         </div>
       </nav>
     );

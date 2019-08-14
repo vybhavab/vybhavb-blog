@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "export": "next export",
     "deploy": "npm run build && npm run export"
   },
@@ -16,20 +16,27 @@
   ],
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
-    "bulma": "^0.7.4",
+    "bulma": "^0.7.5",
     "classnames": "^2.2.6",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "gray-matter": "^4.0.2",
+    "isomorphic-unfetch": "^3.0.0",
+    "light": "^1.2.47",
     "next": "^8.1.0",
     "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "raw-loader": "^3.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-markdown": "^4.0.8",
-    "react-syntax-highlighter": "^10.2.1",
+    "react-markdown": "^4.0.9",
+    "react-syntax-highlighter": "^10.3.0",
     "react-typed": "^1.1.2"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0"
   }
