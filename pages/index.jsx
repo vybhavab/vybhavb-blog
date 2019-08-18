@@ -48,8 +48,8 @@ export default class Index extends React.Component {
           size="medium"
         />
         <div className="container">
-          {posts.map(post => (
-            <div className="box">
+          {posts.map((post, index) => (
+            <div className="box" key={index}>
               <Link href={{ pathname: '/static/data/posts', query: { title: post.path } }} as={post.path} key={post.title}>
                 <a>
                   <div>{post.title}</div>

@@ -1,9 +1,12 @@
 const express = require('express');
 const next = require('next');
+const { parse } = require('url');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
+const port = parseInt(process.env.PORT, 10) || 3000;
+
 
 app
   .prepare()
@@ -11,16 +14,15 @@ app
     const server = express();
 
     server.get('/:id', (req, res) => {
-      const actualPage = '/post';
       const queryParams = { title: req.params.id };
-      app.render(req, res, actualPage, queryParams);
+      app.render(req, res, '/post', queryParams);
     });
 
     server.get('*', (req, res) => handle(req, res));
 
-    server.listen(3000, (err) => {
+    server.listen(port, (err) => {
       if (err) throw err;
-      console.log('> Ready on http://localhost:3000');
+      console.log(`> Ready on http://localhost:${port}`);
     });
   })
   .catch((ex) => {
