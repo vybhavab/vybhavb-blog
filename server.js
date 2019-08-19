@@ -1,12 +1,17 @@
 const express = require('express');
 const next = require('next');
-const { parse } = require('url');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 const port = parseInt(process.env.PORT, 10) || 3000;
 
+
+if (dev) {
+  process.env.baseURL = 'http://localhost:3000';
+} else {
+  process.env.baseURL = `${process.env.REPOSITORY_URL}/tree/${process.env.COMMIT_REF}`;
+}
 
 app
   .prepare()
