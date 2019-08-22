@@ -6,18 +6,15 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 const port = parseInt(process.env.PORT, 10) || 3000;
 
-
-if (dev) {
-  process.env.baseURL = 'http://localhost:3000';
-} else {
-  process.env.baseURL = `${process.env.REPOSITORY_URL}/tree/${process.env.COMMIT_REF}`;
-}
-
 app
   .prepare()
   .then(() => {
     const server = express();
-
+    if (dev) {
+      process.env.baseURL = 'http://localhost:3000';
+    } else {
+      process.env.baseURL = `https://raw.githubusercontent.com/vybhavb/vybhavb-blog/${process.env.COMMIT_REF}`;
+    }
     server.get('/:id', (req, res) => {
       const queryParams = { title: req.params.id };
       app.render(req, res, '/post', queryParams);
