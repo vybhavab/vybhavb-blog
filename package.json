@@ -23,7 +23,7 @@
     "gray-matter": "^4.0.2",
     "isomorphic-unfetch": "^3.0.0",
     "light": "^1.2.47",
-    "next": "^9.5.5",
+    "next": "^14.2.32",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "raw-loader": "^3.1.0",
