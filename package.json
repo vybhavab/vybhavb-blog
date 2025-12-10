@@ -19,7 +19,7 @@
     "bulma": "^0.7.5",
     "classnames": "^2.2.6",
     "dotenv": "^8.0.0",
-    "express": "^4.17.1",
+    "express": "^4.22.1",
     "gray-matter": "^4.0.2",
     "isomorphic-unfetch": "^3.0.0",
     "light": "^1.2.47",
